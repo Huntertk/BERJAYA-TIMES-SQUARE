@@ -1,0 +1,32 @@
+{
+    "image": [
+        "https://res.cloudinary.com/drrkaak40/image/upload/v1706714289/Malaysia%20Experience/BERJAYA%20TIMES%20SQUARE/free-fall_q2hzce.jpg",
+        "https://res.cloudinary.com/drrkaak40/image/upload/v1706714289/Malaysia%20Experience/BERJAYA%20TIMES%20SQUARE/2_eujqhd.jpg",
+        "https://res.cloudinary.com/drrkaak40/image/upload/v1706714289/Malaysia%20Experience/BERJAYA%20TIMES%20SQUARE/dizzy_izzy_xnmpgu.jpg"
+    ],
+    "title": "BERJAYA TIMES SQUARE",
+    "desc": "Indoor amusement in Kuala Lumpur with rides, arcadegames, and family-friendly fun. Located in the Berjaya Times Square complex.",
+    "type": "bookTypeOne",
+    "preference": [
+        {
+            "title": "Malaysian",
+            "price": {
+                "adult": 56,
+                "child": 46
+            },
+            "details": [
+                "Valid only for Malaysian Citizens"
+            ]
+        },
+        {
+            "title": "Non-Malaysian",
+            "price": {
+                "adult": 70,
+                "child": 65
+            },
+            "details": [
+                "Valid only for Non Malaysian Citizens"
+            ]
+        }
+    ]
+}
