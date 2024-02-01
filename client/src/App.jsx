@@ -29,7 +29,7 @@ const App = () => {
   const {responseClientUrl} = useSelector(state => state.booking)
   return (
     <BrowserRouter>
-    <ToastContainer />
+    <ToastContainer autoClose={2000} />
       <Routes>
         <Route element={<Layout />}>
           <Route path='/' element={<Home />} />
