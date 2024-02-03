@@ -11,11 +11,11 @@ import { useAdminLoginMutation } from '../../redux/api/adminAuthApi'
 const AdminLogin = () => {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
-  const {adminEmail, error} = useSelector(state => state.admin) 
+  const {adminEmail} = useSelector(state => state.admin) 
   const dispatch = useDispatch()
   const navigate = useNavigate()
 
-  const [adminLogin, {isLoading}] = useAdminLoginMutation()
+  const [adminLogin, {isLoading, error}] = useAdminLoginMutation()
 
       const handleAdminLogin = async (e) => {
        e.preventDefault()
@@ -26,7 +26,10 @@ const AdminLogin = () => {
       if(adminEmail){
         navigate("/admin/all-booking")
       }
-    }, [adminEmail])
+      if(error){
+        toast.error(error?.data?.msg);
+      }
+    }, [adminEmail, error])
 
   return (
     <main className='mainContainer' style={{backgroundImage: `url(${bgImg})`}}>
