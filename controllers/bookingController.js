@@ -19,7 +19,10 @@ export const createBooking = async (req, res) => {
         totalAmount,
         bookingType,
         bookingTitle,
-        responseClientUrl
+        responseClientUrl,
+        pref,
+        websiteName
+
     } = req.body;
     try {
         const session = await stripe.checkout.sessions.create({
@@ -27,9 +30,19 @@ export const createBooking = async (req, res) => {
             line_items: [
                 {
                     price_data: {
-                        currency: 'myr',
+                        currency: 'inr',
                         product_data: {
                             name: bookingTitle,
+                            metadata:{
+                                bookingDate, 
+                                adultCount, 
+                                childCount,
+                                pref, 
+                                name, 
+                                email, 
+                                mobileNumber, 
+                                websiteName
+                            }
                         },
                         unit_amount: totalAmount * 100,
                     },
@@ -37,8 +50,8 @@ export const createBooking = async (req, res) => {
                 },
             ],
             mode: 'payment',
-            success_url: `https://lostworldoftambun.malaysia-experience.com/${responseClientUrl}`,
-            cancel_url: 'https://lostworldoftambun.malaysia-experience.com/',
+            success_url: `https://berjaya-times-square.onrender.com/${responseClientUrl}`,
+            cancel_url: 'https://berjaya-times-square.onrender.com/',
             payment_intent_data: {
                 setup_future_usage: 'off_session',
                 description: 'Booking payment',
