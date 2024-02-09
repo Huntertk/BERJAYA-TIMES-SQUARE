@@ -45,7 +45,8 @@ const Booking = () => {
                 bookingTitle,
                 bookingType: type,
                 responseClientUrl,
-                websiteName:"BERJAYA TIMES SQUARE"
+                websiteName:"BERJAYA TIMES SQUARE",
+                pref
             })
             const response = res.data;
             const {data} = await axios.get('/api/v1/booking/totalbooking')
